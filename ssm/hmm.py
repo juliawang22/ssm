@@ -633,7 +633,7 @@ class MultiHMM(HMM):
             mask = np.ones((T,) + D, dtype=bool)
 
             # Sample the first state from the initial distribution
-            pi0 = self.initial_state_list[ind].initial_state_distn
+            pi0 = self.initial_state_list[trans_ind].initial_state_distn
             z[0] = npr.choice(self.K, p=pi0)
             data[0] = self.observations.sample_x(z[0], data[:0], input=input[0], with_noise=with_noise)
 
